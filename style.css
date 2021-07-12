@@ -1,64 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap");
+* {
+  margin:0;
+  padding: 0;
+}
 body {
-  background: #262626;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.profile-box {
-  position: relative;
-  background: #ffffff;
-  width: 400px;
-  height: auto;
-  margin: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 4px;
-  justify-content: center;
-  align-items: center;
-}
-
-.img-area {
-  border: 6px solid #ddd;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-size: cover;
-  background-position: center center;
-}
-
-.profile-box:nth-child(1) .img-area {
-  background-image: url(1.jpg);
-}
-
-.profile-box:nth-child(2) .img-area {
-  background-image: url(1.jpg);
-}
-.profile-box:nth-child(3) .img-area {
-  background-image: url(1.jpg);
-}
-
-.img-text {
+  background: #FF6540;
   font-family: Poppins;
 }
-.img-text .title {
-  font-size: 24px;
-  font-weight: 600;
- 
-  margin-bottom: 20px;
+
+.banner-area  {
+  max-width: 960px;
+  margin: 0 auto;
+  color: #FFFFFF;
+  font-family: Poppins;
+
+}   
+
+.banner-area h2 {
+  padding:20px;
+  text-align: center;
+  font-family: Audiowide;
 }
 
-.img-text .description {
-  font-size: 16px;
-  font-weight: 500;
-  
-  margin-bottom: 20px;
+.menu-area {
+  display: flex;
+  list-style: none;
+}
+
+.menu-area li {
+background: #262626;
+flex-grow: 1;
+text-align: center;
+}
+.menu-area li:not(:first-child) {
+  border-left: 2px solid #fff;
+}
+
+.menu-area li:hover {
+  background: #333;
+}
+.menu-area li a {
+  display: block;
+  padding:15px 0;
+  color :inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+input[type=checkbox], .res-menu {
+  display: none;
+}
+
+@media screen and (max-width:600px) {
+  .res-menu {
+    display:  flex;
+    justify-content: center;
+    padding:20px 0;
+    background: #000;
+    text-transform: uppercase;
+    font-family: Poppins;
+    cursor:pointer;
+  }
+  .menu-area {
+    display: none;
+  }
+  input[type=checkbox]:checked ~ .menu-area {
+    display: block;
+  }
+  .menu-area li:not(:first-child) {
+    border: 0;
+  }
+  .menu-area li:not(:last-child) {
+    margin: 2px 0;
+  }
 }
